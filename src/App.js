@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { faCoffee, faGym, faHeart, faDumbbell } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 import Exercise from "./components/Exercise/Exercise";
 import Blogs from "./components/Blogs/Blogs";
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <div className="header">
         <h2>
-          <FontAwesomeIcon icon={faCoffee}></FontAwesomeIcon>
+          <FontAwesomeIcon icon={faDumbbell}></FontAwesomeIcon> 
           Extreme GYM 
         </h2>
       </div>
