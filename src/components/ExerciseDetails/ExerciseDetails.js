@@ -4,7 +4,15 @@ import { faLocation } from "@fortawesome/free-solid-svg-icons";
 import profile from "./morshed.jpg";
 import "./ExerciseDetails.css";
 
-const ExerciseDetails = () => {
+const ExerciseDetails = (props) => {
+  const { exerciseTime } = props;
+  // console.log(exerciseTime);
+
+  let time = 0;
+  for (const activity of exerciseTime) {
+    time = time + parseFloat(activity.time);
+  }
+  // console.log(time);
   return (
     <div className="ExerciseDetails">
       <div className="profile">
@@ -59,11 +67,15 @@ const ExerciseDetails = () => {
         <h2>Exercise Details</h2>
         <div className="exercise-detail">
           <h3>Exercise Time</h3>
-          <h3><span>200 </span>seconds</h3>
+          <h3>
+            <span>{time} </span>seconds
+          </h3>
         </div>
         <div className="exercise-detail">
           <h3>Break Time</h3>
-          <h3><span>15 </span>seconds</h3>
+          <h3>
+            <span>15 </span>seconds
+          </h3>
         </div>
       </div>
       <div>

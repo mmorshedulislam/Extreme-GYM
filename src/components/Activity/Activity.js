@@ -1,9 +1,9 @@
 import React from "react";
 import "./Activity.css";
 
-const Activity = ({ activity }) => {
+const Activity = ({ activity, addToList }) => {
   const { name, img, time } = activity;
-  console.log(activity);
+  // console.log(activity);
   return (
     <div className="exercise">
       <img src={img} alt="" />
@@ -12,7 +12,7 @@ const Activity = ({ activity }) => {
         <p>For Age: 20-25</p>
         <p>Time Required: {time}s</p>
       </div>
-      <button className="exercise-btn">Add To List</button>
+      <button onClick={() => addToList(activity)} className="exercise-btn">Add To List</button>
     </div>
   );
 };
