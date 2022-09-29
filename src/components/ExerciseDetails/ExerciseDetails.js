@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocation } from "@fortawesome/free-solid-svg-icons";
 import profile from "./morshed.jpg";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./ExerciseDetails.css";
+import addToLS from "../fakedb/fakedb";
 
 const ExerciseDetails = (props) => {
   const { exerciseTime } = props;
@@ -22,12 +25,14 @@ const ExerciseDetails = (props) => {
 
   // console.log(timeBreak);
 
+  const notify = () => toast("Congratulations! You successfully completed.");
+
   const [brkTime, setBrkTime] = useState([]);
   const addToBreak = (brkTime) => {
     console.log("clicked", brkTime);
     setBrkTime(brkTime.breakTime);
   };
-  console.log(brkTime);
+  // console.log(brkTime);
   return (
     <div className="ExerciseDetails">
       <div className="profile">
@@ -40,6 +45,7 @@ const ExerciseDetails = (props) => {
           </p>
         </div>
       </div>
+      <button onClick={() => addToLS(brkTime)}>Click</button>
       <div className="body">
         <div>
           <h3>
@@ -82,7 +88,10 @@ const ExerciseDetails = (props) => {
         </div>
       </div>
       <div>
-        <button className="btn-activity">Activity Completed</button>
+        <button className="btn-activity" onClick={notify}>
+          Activity Completed
+        </button>
+        <ToastContainer />
       </div>
     </div>
   );

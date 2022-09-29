@@ -78,7 +78,7 @@
     background: #80808018;
     padding: 10px;
     border-radius: 7px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .exercise-detail h3:nth-child(2) {
@@ -90,9 +90,10 @@
         border: none;
         width: 100%;
         padding: 14px 20px;
-        background: #967ba8;
+        background: #331935;
         font-size: 24px;
         border-radius: 7px;
         font-weight: 600;
         color: #fff;
+        margin-top: 10px;
 }

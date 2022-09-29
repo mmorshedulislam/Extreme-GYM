@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 import Exercise from "./components/Exercise/Exercise";
+import Blogs from "./components/Blogs/Blogs";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         </h2>
       </div>
       <Exercise></Exercise>
+      <Blogs></Blogs>
     </div>
   );
 }
