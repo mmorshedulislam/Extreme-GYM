@@ -1,0 +1,42 @@
+.ExerciseDetails{
+    position: fixed;
+    top: 0;
+}
+
+.profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.profile img{
+    width: 60px;
+    height: 60px; 
+    border-radius: 50%;
+
+}
+.profile-info {
+    margin-left: 10px;
+}
+.profile-info h3 {
+    margin-bottom: 0;
+}
+.profile-info p {
+    margin-top: 5px;
+}
+
+.body {
+    display: flex;
+    justify-content: space-between;
+    background: #8080807d;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+.body h3{
+    margin: 0 0;
+}
+.body h5 {
+    margin-top: 5px;
+}

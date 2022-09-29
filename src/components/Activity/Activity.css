@@ -1,0 +1,22 @@
+.exercise {
+    background-color: gray;
+    border-radius: 10px;
+    color: #fff;
+    position: relative;
+}
+.exercise-info{
+    padding: 0 20px;
+    padding-bottom: 60px;
+}
+
+.exercise-btn {
+    width: 100%;
+    border: none;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    background: #331935;
+    color: #fff;
+    border-radius: 0 0 5px 5px;
+    font-size: 18px;
+}

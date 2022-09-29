@@ -1,12 +1,19 @@
 // import logo from './logo.svg';
-import './App.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import "./App.css";
+import Exercise from "./components/Exercise/Exercise";
 
 function App() {
   return (
     <div className="App">
-      <h1>First Input</h1>
-      {/* <FontAwesomeIcon icon={faCoffee}></FontAwesomeIcon> */}
-      {/* <FontAwesomeIcon icon={faCart}></FontAwesomeIcon> */}
+      <div className="header">
+        <h2>
+          <FontAwesomeIcon icon={faCoffee}></FontAwesomeIcon>
+          Extreme GYM
+        </h2>
+      </div>
+      <Exercise></Exercise>
     </div>
   );
 }

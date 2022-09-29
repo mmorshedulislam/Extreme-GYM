@@ -1,0 +1,18 @@
+.exercise-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 40px;
+}
+.exercise-container img {
+    max-width: 100%;
+}
+
+.exercise-section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-left: 50px;
+}
+/* .exercise-detail-section{
+    background-color: red;
+} */

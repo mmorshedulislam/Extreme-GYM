@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+
+.header {
+  margin-left: 50px;
+  margin-top: 50px;
+  color: #331935;
+}
+.header h2{
+  font-size: 36px;
+}
