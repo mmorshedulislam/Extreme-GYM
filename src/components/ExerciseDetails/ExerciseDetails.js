@@ -37,8 +37,8 @@ const ExerciseDetails = (props) => {
   const [saveTime, setSaveTime] = useState([]);
   useEffect(() => {
     const storedTimes = getStoredTime(brkTime.breakTime);
-    console.log(storedTimes);
     setSaveTime(storedTimes);
+    // console.log(storedTimes);
   }, [brkTime]);
 
   return (
@@ -75,7 +75,11 @@ const ExerciseDetails = (props) => {
         <h2>Add A Break</h2>
         <div className="addABreakBtn">
           {timeBreak.map((breakTime) => (
-            <BreakBtn breakTime={breakTime} addToBreak={addToBreak}></BreakBtn>
+            <BreakBtn 
+            key={breakTime.id}
+            breakTime={breakTime} 
+            addToBreak={addToBreak}
+            ></BreakBtn>
           ))}
         </div>
       </div>
