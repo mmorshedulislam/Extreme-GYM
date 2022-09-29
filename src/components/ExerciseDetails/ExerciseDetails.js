@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocation } from "@fortawesome/free-solid-svg-icons";
 import profile from "./morshed.jpg";
@@ -12,7 +12,15 @@ const ExerciseDetails = (props) => {
   for (const activity of exerciseTime) {
     time = time + parseFloat(activity.time);
   }
-  // console.log(time);
+
+  const [timeBreak, setTimeBreak] = useState([]);
+  useEffect(() => {
+    fetch("break.json")
+      .then((res) => res.json())
+      .then((data) => setTimeBreak(data));
+  }, []);
+
+  console.log(timeBreak);
   return (
     <div className="ExerciseDetails">
       <div className="profile">
@@ -46,21 +54,9 @@ const ExerciseDetails = (props) => {
       <div className="addABreak">
         <h2>Add A Break</h2>
         <div className="addABreakBtn">
-          <button>
-            <span>10</span>s
-          </button>
-          <button>
-            <span>20</span>s
-          </button>
-          <button>
-            <span>30</span>s
-          </button>
-          <button>
-            <span>40</span>s
-          </button>
-          <button>
-            <span>50</span>s
-          </button>
+          {timeBreak.map((breakTime) => (
+            <BreakBtn breakTime={breakTime}></BreakBtn>
+          ))}
         </div>
       </div>
       <div className="exercise-detail-container">
@@ -81,6 +77,16 @@ const ExerciseDetails = (props) => {
       <div>
         <button className="btn-activity">Activity Completed</button>
       </div>
+    </div>
+  );
+};
+
+const BreakBtn = ({ breakTime }) => {
+  return (
+    <div className="">
+      <button>
+        <span>{breakTime.breakTime}</span>s
+      </button>
     </div>
   );
 };
