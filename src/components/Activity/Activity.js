@@ -12,7 +12,9 @@ const Activity = ({ activity, addToList }) => {
         <p>For Age: 20-25</p>
         <p>Time Required: {time}s</p>
       </div>
-      <button onClick={() => addToList(activity)} className="exercise-btn">Add To List</button>
+      <button onClick={() => addToList(activity)} className="exercise-btn">
+        Add To List
+      </button>
     </div>
   );
 };
