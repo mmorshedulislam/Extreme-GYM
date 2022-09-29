@@ -13,7 +13,7 @@ const Blogs = () => {
     <div className="blogs-container">
       <div className="blogs">
         {blogs.map((blog) => (
-          <Blog blog={blog}></Blog>
+          <Blog key={blog.id} blog={blog}></Blog>
         ))}
       </div>
     </div>

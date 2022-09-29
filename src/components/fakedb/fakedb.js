@@ -1,6 +1,12 @@
 const addToLS = (time) => {
-  console.log("clicked", time);
-  localStorage.setItem("click", 50);
+  // console.log("clicked", time);
+  localStorage.setItem("breakTime", time);
+  getStoredTime();
 };
 
-export default addToLS;
+const getStoredTime = () => {
+  const storedTime = localStorage.getItem("breakTime");
+  return storedTime;
+};
+
+export { addToLS, getStoredTime };

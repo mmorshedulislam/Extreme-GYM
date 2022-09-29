@@ -5,7 +5,7 @@ import profile from "./morshed.jpg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./ExerciseDetails.css";
-import addToLS from "../fakedb/fakedb";
+import { addToLS, getStoredTime } from "../fakedb/fakedb";
 
 const ExerciseDetails = (props) => {
   const { exerciseTime } = props;
@@ -33,6 +33,14 @@ const ExerciseDetails = (props) => {
     setBrkTime(brkTime.breakTime);
   };
   // console.log(brkTime);
+
+  const [saveTime, setSaveTime] = useState([]);
+  useEffect(() => {
+    const storedTimes = getStoredTime(brkTime.breakTime);
+    console.log(storedTimes);
+    setSaveTime(storedTimes);
+  }, [brkTime]);
+
   return (
     <div className="ExerciseDetails">
       <div className="profile">
@@ -45,7 +53,6 @@ const ExerciseDetails = (props) => {
           </p>
         </div>
       </div>
-      <button onClick={() => addToLS(brkTime)}>Click</button>
       <div className="body">
         <div>
           <h3>
@@ -83,7 +90,8 @@ const ExerciseDetails = (props) => {
         <div className="exercise-detail">
           <h3>Break Time</h3>
           <h3>
-            <span>{brkTime} </span>seconds
+            {/* <span>{brkTime} </span>seconds */}
+            <span>{saveTime} </span>seconds
           </h3>
         </div>
       </div>
@@ -100,9 +108,11 @@ const ExerciseDetails = (props) => {
 const BreakBtn = ({ breakTime, addToBreak }) => {
   return (
     <div className="">
-      <button onClick={() => addToBreak(breakTime)}>
-        <span>{breakTime.breakTime}</span>s
-      </button>
+      <div onClick={() => addToLS(breakTime.breakTime)}>
+        <button onClick={() => addToBreak(breakTime)}>
+          <span>{breakTime.breakTime}</span>s
+        </button>
+      </div>
     </div>
   );
 };

@@ -11,7 +11,7 @@ function App() {
       <div className="header">
         <h2>
           <FontAwesomeIcon icon={faCoffee}></FontAwesomeIcon>
-          Extreme GYM
+          Extreme GYM 
         </h2>
       </div>
       <Exercise></Exercise>
