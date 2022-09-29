@@ -20,7 +20,14 @@ const ExerciseDetails = (props) => {
       .then((data) => setTimeBreak(data));
   }, []);
 
-  console.log(timeBreak);
+  // console.log(timeBreak);
+
+  const [brkTime, setBrkTime] = useState([]);
+  const addToBreak = (brkTime) => {
+    console.log("clicked", brkTime);
+    setBrkTime(brkTime.breakTime);
+  };
+  console.log(brkTime);
   return (
     <div className="ExerciseDetails">
       <div className="profile">
@@ -55,7 +62,7 @@ const ExerciseDetails = (props) => {
         <h2>Add A Break</h2>
         <div className="addABreakBtn">
           {timeBreak.map((breakTime) => (
-            <BreakBtn breakTime={breakTime}></BreakBtn>
+            <BreakBtn breakTime={breakTime} addToBreak={addToBreak}></BreakBtn>
           ))}
         </div>
       </div>
@@ -70,7 +77,7 @@ const ExerciseDetails = (props) => {
         <div className="exercise-detail">
           <h3>Break Time</h3>
           <h3>
-            <span>15 </span>seconds
+            <span>{brkTime} </span>seconds
           </h3>
         </div>
       </div>
@@ -81,10 +88,10 @@ const ExerciseDetails = (props) => {
   );
 };
 
-const BreakBtn = ({ breakTime }) => {
+const BreakBtn = ({ breakTime, addToBreak }) => {
   return (
     <div className="">
-      <button>
+      <button onClick={() => addToBreak(breakTime)}>
         <span>{breakTime.breakTime}</span>s
       </button>
     </div>
