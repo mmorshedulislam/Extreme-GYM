@@ -28,15 +28,71 @@
 .body {
     display: flex;
     justify-content: space-between;
-    background: #8080807d;
+    background: #80808018;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 7px;
     margin-top: 20px;
     text-align: center;
+    font-family: 'Roboto', serif;
 }
 .body h3{
     margin: 0 0;
 }
-.body h5 {
-    margin-top: 5px;
+.body div h3:nth-child(1){
+    color: #191C32;
+    font-size: 24px;
+}
+.body div h3 span{
+    color: #777A86;
+    font-size: 14px;
+}
+.body div h3:nth-child(2){
+    color: #777A86;
+}
+
+.addABreakBtn{
+    display: flex;
+    justify-content: space-between;
+    background: #80808018;
+    padding: 10px;
+    border-radius: 7px;
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Roboto', serif;
+}
+
+.addABreakBtn button {
+    background: #fff;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0 5px;
+}
+
+.exercise-detail{
+    display: flex;
+    justify-content: space-between;
+    background: #80808018;
+    padding: 10px;
+    border-radius: 7px;
+    margin-top: 20px;
+}
+
+.exercise-detail h3:nth-child(2) {
+    color: #777A86;
+    font-weight: 400;
+}
+
+.btn-activity {
+        border: none;
+        width: 100%;
+        padding: 14px 20px;
+        background: #967ba8;
+        font-size: 24px;
+        border-radius: 7px;
+        font-weight: 600;
+        color: #fff;
 }
